@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: projectflow-backend
+    env: node
+    plan: free
+    buildCommand: cd backend && npm install && npx prisma generate
+    startCommand: cd backend && npx prisma db push && npm start
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: DATABASE_URL
+        value: postgresql://project_management_db_13pd_user:uFO2kggtFyHgLJq45SW1qHPXwyxqRE1t@dpg-d8qlud9194ac7392h4sg-a.oregon-postgres.render.com/project_management_db_13pd?sslmode=require
+      - key: JWT_SECRET
+        value: supersecretjwtkey
+      - key: JWT_EXPIRES_IN
+        value: 1d
