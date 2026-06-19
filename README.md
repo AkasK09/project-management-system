@@ -4,18 +4,18 @@ A modern full-stack Project Management System built with React (Vite) and Node.j
 
 ## Tech Stack
 **Frontend:** React, Vite, Tailwind CSS, React Router DOM, Axios, React Hook Form, Lucide React
-**Backend:** Node.js, Express.js, Prisma ORM, MySQL, JWT, bcryptjs
-**Deployment:** Vercel (Frontend), Render (Backend), Railway (MySQL)
+**Backend:** Node.js, Express.js, Prisma ORM, PostgreSQL, JWT, bcryptjs
+**Deployment:** Vercel (Frontend), Render (Backend & PostgreSQL)
 
 ---
 
 ## 🛠️ Setup Instructions
 
 ### 1. Database Setup
-Ensure you have MySQL running. Then, inside your `backend/` directory, create a `.env` file:
+Ensure you have PostgreSQL running locally or use a cloud database. Then, inside your `backend/` directory, create a `.env` file:
 
 ```env
-DATABASE_URL="mysql://root:password@localhost:3306/project_management"
+DATABASE_URL="postgresql://user:password@localhost:5432/project_management"
 JWT_SECRET="your_jwt_secret_key"
 PORT=5000
 ```
@@ -68,9 +68,9 @@ npm run dev
 
 ## 🚀 Deployment Guide
 
-### Railway (MySQL)
-1. Go to Railway and start a new MySQL service.
-2. Copy the connection string to Render.
+### PostgreSQL (Render)
+1. Go to Render and create a new PostgreSQL database.
+2. Copy the Internal Database URL connection string for the backend deployment.
 
 ### Render (Backend)
 1. Link your GitHub repository.
